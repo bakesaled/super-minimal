@@ -1,0 +1,161 @@
+/*
+Theme Name: Super Minimal
+Author: Brandon Eleuterio
+Author URI:     https://eleuterio.org/
+Description: A minimal blog template
+Version: 0.0.1
+Tags: blog, minimal, slim, light-weight, simple
+*/
+
+body {
+    max-width: 40em;
+    margin: 0 auto;
+    padding: 10px;
+    color: #666;
+    font-family: 'Gentium Book Basic', serif;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Gentium Book Basic', serif;
+    font-weight: 500;
+    text-transform: capitalize;
+    color: #222;
+    letter-spacing: 1px;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+h3 {
+    font-size: 1.2em;
+}
+
+input {
+    color: #222;
+    display: block;
+}
+
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+    color: #222;
+    display: block;
+    border: 1px solid #eee;
+    padding: 5px 15px 5px 15px;
+    font-size: 13px;
+    margin-bottom: 17px;
+    outline: none;
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    background: #222;
+    color: #fff;
+    font-family: 'Gentium Book Basic', serif;
+    font-size: 1em;
+    line-height: 25px;
+    padding: 3px 20px;
+    border: 1px solid #eee;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+textarea {
+    height: 100px;
+    padding: 5px 15px 5px 15px;
+    font-size: 13px;
+    margin-bottom: 17px;
+    outline: none;
+    width: 100%;
+}
+
+label {
+    display: block;
+    margin-bottom: .5em;
+}
+
+a {
+    background-color: transparent;
+    color: #666;
+}
+
+a:hover,
+a:focus,
+a:active {
+    color: #222;
+    text-decoration: none;
+}
+
+a:hover,
+a:active {
+    outline: 0;
+}
+
+header#masthead {
+    margin-bottom: 1em;
+}
+
+header#masthead a {
+    text-decoration: none;
+}
+
+section {
+    margin-bottom: 4em;
+}
+
+pre {
+    color: #fff;
+    background-color: #333;
+    padding: 0.25em;
+    line-height: 1
+}
+
+code {
+    font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+    font-size: 0.8em
+}
+
+blockquote {
+    margin: 0;
+}
+
+blockquote p {
+    padding: 20px;
+    font-style: italic;
+    font-size: .7em;
+    line-height: 25px;
+}
+
+small {
+    color: #666;
+    font-size: .8em;
+}
