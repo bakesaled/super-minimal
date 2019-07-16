@@ -14,8 +14,17 @@ $super_minimal_backto_top_status = super_minimal_get_option('super_minimal_backt
 $super_minimal_copyright_author = super_minimal_get_option('super_minimal_copyright_author');
 ?>
     <footer>
+        <?php
+if (is_active_sidebar('footer-1') ||
+    is_active_sidebar('footer-2') ||
+    is_active_sidebar('footer-3') ||
+    is_active_sidebar('footer-4')):
+
+    get_template_part('template-parts/footer/widgets');
+
+endif;?>
         <?php if ($super_minimal_copyright_author): ?>
-            <span>&copy; <?php echo date("Y"); ?> <a href="<?php echo get_bloginfo('wpurl'); ?>"><?php echo get_bloginfo('name'); ?></a></span>
+            <span>&copy; <?php echo date("Y"); ?> <a href="<?php echo site_url(); ?>"><?php echo get_bloginfo('name'); ?></a></span>
         <?php endif;?>
     </footer>
     <?php if ($super_minimal_backto_top_status): ?>

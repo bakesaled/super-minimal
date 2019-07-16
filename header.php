@@ -10,34 +10,43 @@
  */
 
 $super_minimal_single_blog_meta_category = super_minimal_get_option('super_minimal_single_blog_meta_category');
+$super_minimal_header_tagline = super_minimal_get_option('super_minimal_header_tagline');
 ?>
 <!DOCTYPE html>
 <html lang="<?php language_attributes();?>">
   <head>
     <meta charset="<?php bloginfo('charset');?>">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="<?php echo get_bloginfo('description'); ?>">
-    <meta name="author" content="">
-
-    <title><?php echo get_bloginfo('name'); ?></title>
-
-    <!-- Bootstrap core CSS -->
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"> -->
-
-    <!-- Custom styles for this template -->
-    <link href="<?php echo get_bloginfo('template_directory'); ?>/style.css" rel="stylesheet">
+    <link rel="profile" href="https://gmpg.org/xfn/11" />
     <?php wp_head();?>
   </head>
 
-  <body>
+  <body <?php body_class();?>>
     <header id="masthead">
-        <h1 class="blog-title"><a href="<?php echo get_bloginfo('wpurl'); ?>"><?php echo get_bloginfo('name'); ?></a></h1>
+    <div>
+        <h1 class="blog-title"><a href="<?php echo esc_url(site_url()); ?>"><?php echo get_bloginfo('name'); ?></a></h1>
+        <?php if ($super_minimal_header_tagline): ?>
+        <p class="site-description"><?php echo esc_html(get_bloginfo('description')); ?></p>
+        <?php endif;?>
+        </div>
+        <?php if (has_nav_menu('primary')): ?>
+            <div class="header-menu">
+							<ul class="navbar-items nav pull-right navigation-section">
+								<div class="mobile-menu-wrapper">
+									<span class="mobile-menu-icon"><i class="icon-menu"></i></span>
+								</div>
+								<li id="site-navigation" class="main-navigation nav-item" role="navigation">
+									<?php wp_nav_menu(array(
+    'theme_location' => 'primary',
+    'menu_id' => 'primary-menu',
+    'menu_class' => 'main-menu nav',
+));
+?>
+								</li>
+							</ul>
+            </div>
+						<?php endif;?>
     </header>
-      <?php if (has_nav_menu('primary')): ?>
-      <!-- Menu goes here -->
-      <?php endif;?>
       <header>
                   <?php if (is_page() || is_single()) {?>
                     <?php if ($super_minimal_single_blog_meta_category): ?>
@@ -58,8 +67,5 @@ $super_minimal_single_blog_meta_category = super_minimal_get_option('super_minim
 										<?php } else {
     the_archive_title('<h2>', '</h2>');
 }
-if ($super_minimal_breadcrumb_status):
-    super_minimal_breadcrumbs();
-endif;
 ?>
                   </header>

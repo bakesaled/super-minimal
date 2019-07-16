@@ -11,21 +11,14 @@ get_header();
 while (have_posts()): the_post();
     get_template_part('template-parts/post/content-single');
     if (is_singular('post')) {
-        // Previous/next post navigation.
-        // the_post_navigation(
-        //     array(
-        //         'next_text' => '<span aria-hidden="true">' . __('&raquo;', 'super-minimal') . '</span> ' .
-        //         '<span>' . __('next post', 'super-minimal') . '</span>',
-        //         'prev_text' => '<span aria-hidden="true">' . __('&laquo;', 'super-minimal') . '</span> ' .
-        //         '<span>' . __('previous', 'super-minimal') . '</span>',
-        //     )
-        // );
+
+        super_minimal_the_posts_navigation();
         ?>
-	        <small>
-					<?php previous_post('&laquo; %', 'previous', 'no');?> |
-	                <?php next_post('% &raquo; ', 'next', 'no');?>
-	        </small>
-					<?php
+			        <small>
+			                <?php previous_post_link('%link', '&laquo; previous', false);?>
+			                <?php next_post_link('%link', 'next &raquo;', false);?>
+			        </small>
+			                <?php
     }
 
     if (comments_open() || get_comments_number()):

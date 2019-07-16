@@ -8,13 +8,41 @@
 
 <?php
 $super_minimal_single_blog_meta_date = super_minimal_get_option('super_minimal_single_blog_meta_date');
+$super_minimal_single_blog_meta_author = super_minimal_get_option('super_minimal_single_blog_meta_author');
+$super_minimal_single_blog_meta_tags = super_minimal_get_option('super_minimal_single_blog_meta_tags');
 $post_id = get_the_ID();
 ?>
-<article id="post-<?php the_ID();?>">
+<article id="post-<?php the_ID();?>" <?php post_class();?>>
+<?php if (has_post_thumbnail()): ?>
+    <div class="post-thumbnail">
+        <a href="<?php the_permalink();?>" title="<?php the_title_attribute();?>">
+            <?php the_post_thumbnail();?>
+        </a>
+    </div>
+<?php endif;?>
+<?php if ($super_minimal_single_blog_meta_date): ?>
 <small>
-<?php if ($super_minimal_single_blog_meta_date):
-    super_minimal_post_date();
-endif;?>
+    <?php super_minimal_post_date();?>
 </small>
+    <?php endif;?>
+<?php if ($super_minimal_single_blog_meta_author): ?>
+			<small>
+				<?php super_minimal_post_author();?>
+</small>
+		<?php endif;?>
 <?php the_content();?>
+<?php wp_link_pages(
+    array(
+        'before' => '<div class="page-links">' . __('Pages:', 'super-minimal'),
+        'after' => '</div>',
+    )
+);
+?>
+<?php if ($super_minimal_single_blog_meta_tags): ?>
+				<?php if (has_tag()): ?>
+				<small>
+					 <?php super_minimal_post_tags();?>
+</small>
+				<?php endif;?>
+			<?php endif;?>
 </article>

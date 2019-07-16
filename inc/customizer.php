@@ -16,8 +16,70 @@ function super_minimal_customize_register($wp_customize)
     //theme option panel
     $wp_customize->add_panel('theme_option_panel', array('title' => esc_html__('Theme Options', 'super-minimal'), 'priority' => 200, 'capability' => 'edit_theme_options'));
 
+    //header section
+    $wp_customize->add_section('super_minimal_header_section',
+        array('title' => esc_html__('Header Option', 'super-minimal'),
+            'priority' => 200,
+            'capability' => 'edit_theme_options',
+            'panel' => 'theme_option_panel',
+        )
+    );
+
+    //header tagline setting.
+    $wp_customize->add_setting('super_minimal_header_tagline', array(
+        'default' => $default['super_minimal_header_tagline'],
+        'sanitize_callback' => 'esc_url_raw'));
+
+    //header tagline control
+    $wp_customize->add_control('super_minimal_header_tagline',
+        array('label' => esc_html__('Show tagline', 'super-minimal'),
+            'section' => 'super_minimal_header_section',
+            'type' => 'checkbox',
+            'priority' => 100,
+        )
+    );
+
     //blog option panel
     $wp_customize->add_panel('blog_option_panel', array('title' => esc_html__('Blog Options', 'super-minimal'), 'priority' => 200, 'capability' => 'edit_theme_options'));
+
+    // blog post section
+    $wp_customize->add_section('super_minimal_blog_meta_section',
+        array('title' => esc_html__('List Post Meta Items', 'super-minimal'),
+            'priority' => 500,
+            'capability' => 'edit_theme_options',
+            'panel' => 'blog_option_panel',
+        )
+    );
+
+    $wp_customize->add_setting('super_minimal_blog_meta_date',
+        array('capability' => 'edit_theme_options',
+            'default' => $default['super_minimal_blog_meta_date'],
+            'sanitize_callback' => 'super_minimal_sanitize_checkbox',
+        )
+    );
+    $wp_customize->add_control('super_minimal_blog_meta_date',
+        array(
+            'label' => esc_html__('Enable Date in Blog List', 'super-minimal'),
+            'section' => 'super_minimal_blog_meta_section',
+            'type' => 'checkbox',
+            'priority' => 100,
+        )
+    );
+
+    $wp_customize->add_setting('super_minimal_blog_meta_author',
+        array('capability' => 'edit_theme_options',
+            'default' => $default['super_minimal_blog_meta_author'],
+            'sanitize_callback' => 'super_minimal_sanitize_checkbox',
+        )
+    );
+    $wp_customize->add_control('super_minimal_blog_meta_author',
+        array(
+            'label' => esc_html__('Enable Author in Blog List', 'super-minimal'),
+            'section' => 'super_minimal_blog_meta_section',
+            'type' => 'checkbox',
+            'priority' => 100,
+        )
+    );
 
     // blog post section
     $wp_customize->add_section('super_minimal_single_blog_meta_section',
@@ -43,6 +105,21 @@ function super_minimal_customize_register($wp_customize)
         )
     );
 
+    $wp_customize->add_setting('super_minimal_single_blog_meta_author',
+        array('capability' => 'edit_theme_options',
+            'default' => $default['super_minimal_single_blog_meta_author'],
+            'sanitize_callback' => 'super_minimal_sanitize_checkbox',
+        )
+    );
+    $wp_customize->add_control('super_minimal_single_blog_meta_author',
+        array(
+            'label' => esc_html__('Enable Author in Single Post', 'super-minimal'),
+            'section' => 'super_minimal_single_blog_meta_section',
+            'type' => 'checkbox',
+            'priority' => 100,
+        )
+    );
+
     $wp_customize->add_setting('super_minimal_single_blog_meta_category',
         array('capability' => 'edit_theme_options',
             'default' => $default['super_minimal_single_blog_meta_category'],
@@ -52,6 +129,21 @@ function super_minimal_customize_register($wp_customize)
     $wp_customize->add_control('super_minimal_single_blog_meta_category',
         array(
             'label' => esc_html__('Enable Category in Single Post', 'super-minimal'),
+            'section' => 'super_minimal_single_blog_meta_section',
+            'type' => 'checkbox',
+            'priority' => 100,
+        )
+    );
+
+    $wp_customize->add_setting('super_minimal_single_blog_meta_tags',
+        array('capability' => 'edit_theme_options',
+            'default' => $default['super_minimal_single_blog_meta_tags'],
+            'sanitize_callback' => 'super_minimal_sanitize_checkbox',
+        )
+    );
+    $wp_customize->add_control('super_minimal_single_blog_meta_tags',
+        array(
+            'label' => esc_html__('Enable Tags in Single Post', 'super-minimal'),
             'section' => 'super_minimal_single_blog_meta_section',
             'type' => 'checkbox',
             'priority' => 100,
@@ -135,7 +227,12 @@ if (!function_exists('super_minimal_default_theme_options')):
     function super_minimal_default_theme_options()
 {
         $defaults = array();
+        $defaults['super_minimal_header_tagline'] = false;
+        $defaults['super_minimal_blog_meta_date'] = true;
+        $defaults['super_minimal_blog_meta_author'] = true;
         $defaults['super_minimal_single_blog_meta_date'] = true;
+        $defaults['super_minimal_single_blog_meta_author'] = true;
+        $defaults['super_minimal_single_blog_meta_tags'] = true;
         $defaults['super_minimal_backto_top_status'] = true;
         $defaults['super_minimal_copyright_author'] = true;
 

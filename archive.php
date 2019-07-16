@@ -13,7 +13,7 @@ get_header();
     while (have_posts()): the_post();
         get_template_part('template-parts/post/content');
     endwhile;
-    the_posts_pagination();
+    super_minimal_the_posts_navigation();
 else:
     get_template_part('template-parts/content', 'none');
 endif;
