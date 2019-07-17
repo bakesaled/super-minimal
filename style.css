@@ -3,7 +3,7 @@ Theme Name: Super Minimal
 Author: Brandon Eleuterio
 Author URI:     https://eleuterio.org/
 Description: A light-weight, simple, minimal blog template
-Version: 0.0.1
+Version: 0.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: super-minimal
@@ -451,6 +451,7 @@ small {
   margin-right: auto;
 }
 
+/* Accessibility */
 /* Text meant only for screen readers. */
 .screen-reader-text {
   border: 0;
@@ -467,14 +468,18 @@ small {
 }
 
 .screen-reader-text:focus {
-  background-color: #eee;
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
   clip: auto !important;
   clip-path: none;
-  color: #444;
+  color: #21759b;
   display: block;
-  font-size: 1em;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: bold;
   height: auto;
-  left: 5px;
+  right: 5px;
   line-height: normal;
   padding: 15px 23px 14px;
   text-decoration: none;
@@ -482,6 +487,11 @@ small {
   width: auto;
   z-index: 100000;
   /* Above WP toolbar. */
+}
+
+/* Do not show the outline on the skip link target. */
+#content[tabindex="-1"]:focus {
+  outline: 0;
 }
 
 @media screen and (max-width: 800px) {

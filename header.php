@@ -22,6 +22,8 @@ $super_minimal_header_tagline = super_minimal_get_option('super_minimal_header_t
   </head>
 
   <body <?php body_class();?>>
+  <a class="skip-link screen-reader-text" href="#content">
+<?php _e('Skip to content', 'super-minimal');?></a>
     <header id="masthead">
     <div>
         <h1 class="blog-title"><a href="<?php echo esc_url(site_url()); ?>"><?php echo get_bloginfo('name'); ?></a></h1>
@@ -69,3 +71,4 @@ $super_minimal_header_tagline = super_minimal_get_option('super_minimal_header_t
 }
 ?>
                   </header>
+                  <div id="content">

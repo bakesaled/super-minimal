@@ -9,6 +9,7 @@
  * @package super-minimal
  */
 ?>
+</div>
 <?php
 $super_minimal_backto_top_status = super_minimal_get_option('super_minimal_backto_top_status');
 $super_minimal_copyright_author = super_minimal_get_option('super_minimal_copyright_author');
