@@ -81,7 +81,6 @@ if (!function_exists('super_minimal_setup')):
             'random-default' => false,
             'header-text' => true,
             'default-text-color' => '',
-            'wp-head-callback' => 'super_minimal_header_style',
         );
         add_theme_support('custom-header', $defaults);
     }

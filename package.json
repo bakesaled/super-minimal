@@ -1,12 +1,14 @@
 {
   "name": "super-minimal",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A light-weight, simple, minimal blog template",
   "scripts": {
+    "zip": "bestzip super-minimal.zip dist",
     "del-dist": "del-cli dist",
     "copy": "npm run del-dist && copyfiles -e \"*.zip\" -e \"*.json\" -e \"node_modules/**/*\" \"**/*\" dist"
   },
   "devDependencies": {
+    "bestzip": "^2.1.4",
     "copyfiles": "^2.1.1",
     "del-cli": "^2.0.0"
   },
