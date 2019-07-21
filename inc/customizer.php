@@ -232,6 +232,7 @@ if (!function_exists('super_minimal_default_theme_options')):
         $defaults['super_minimal_blog_meta_author'] = true;
         $defaults['super_minimal_single_blog_meta_date'] = true;
         $defaults['super_minimal_single_blog_meta_author'] = true;
+        $defaults['super_minimal_single_blog_meta_category'] = true;
         $defaults['super_minimal_single_blog_meta_tags'] = true;
         $defaults['super_minimal_backto_top_status'] = true;
         $defaults['super_minimal_copyright_author'] = true;

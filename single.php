@@ -14,11 +14,11 @@ while (have_posts()): the_post();
 
         super_minimal_the_posts_navigation();
         ?>
-			        <small>
-			                <?php previous_post_link('%link', '&laquo; previous', false);?>
-			                <?php next_post_link('%link', 'next &raquo;', false);?>
-			        </small>
-			                <?php
+						        <small>
+						                <?php previous_post_link('%link', __('&laquo; previous', 'super-minimal'), false);?>
+						                <?php next_post_link('%link', __('next &raquo;', 'super-minimal'), false);?>
+						        </small>
+						                <?php
     }
 
     if (comments_open() || get_comments_number()):

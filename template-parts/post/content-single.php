@@ -15,7 +15,7 @@ $post_id = get_the_ID();
 <article id="post-<?php the_ID();?>" <?php post_class();?>>
 <?php if (has_post_thumbnail()): ?>
     <div class="post-thumbnail">
-        <a href="<?php the_permalink();?>" title="<?php the_title_attribute();?>">
+        <a href="<?php echo esc_url(the_permalink()); ?>" title="<?php esc_attr_e(the_title_attribute());?>">
             <?php the_post_thumbnail();?>
         </a>
     </div>

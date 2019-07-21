@@ -1,6 +1,6 @@
 {
   "name": "super-minimal",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "A light-weight, simple, minimal WordPress blog template",
   "scripts": {
     "zip": "bestzip super-minimal.zip dist",

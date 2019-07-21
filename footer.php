@@ -25,11 +25,11 @@ if (is_active_sidebar('footer-1') ||
 
 endif;?>
         <?php if ($super_minimal_copyright_author): ?>
-            <span>&copy; <?php echo date("Y"); ?> <a href="<?php echo site_url(); ?>"><?php echo get_bloginfo('name'); ?></a></span>
+            <span>&copy; <?php esc_html_e(date("Y"), 'super-minimal');?> <a href="<?php echo esc_url(site_url()); ?>"><?php esc_html_e(get_bloginfo('name'), 'super-minimal');?></a></span>
         <?php endif;?>
     </footer>
     <?php if ($super_minimal_backto_top_status): ?>
-    <a href="#">Back to top</a>
+    <a href="#"><?php esc_html_e("Back to top", 'super-minimal')?></a>
     <?php endif;?>
     <?php wp_footer();?>
   </body>

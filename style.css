@@ -3,7 +3,7 @@ Theme Name: Super Minimal
 Author: Brandon Eleuterio
 Author URI:     https://eleuterio.org/
 Description: A light-weight, simple, minimal blog template
-Version: 0.0.3
+Version: 0.0.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: super-minimal
@@ -41,6 +41,10 @@ h1 {
 
 h2 {
   font-size: 1.5em;
+}
+
+article h2 {
+  border-bottom: 2px solid #222;
 }
 
 h3 {
@@ -381,6 +385,7 @@ small {
   font-weight: 500;
   color: #222;
   margin-bottom: 10px;
+  border-bottom: 2px solid #222;
 }
 
 .widget-area .widget_search label {
