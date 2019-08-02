@@ -9,7 +9,6 @@
 <?php
 $super_minimal_blog_meta_date = super_minimal_get_option('super_minimal_blog_meta_date');
 $super_minimal_blog_meta_author = super_minimal_get_option('super_minimal_blog_meta_author');
-$post_id = get_the_ID();
 ?>
 <article id="post-<?php the_ID();?>" <?php post_class();?>>
 <header>
@@ -17,7 +16,7 @@ $post_id = get_the_ID();
 </header>
 <?php if (has_post_thumbnail()): ?>
     <div class="post-thumbnail">
-        <a href="<?php echo esc_url(the_permalink()); ?>" title="<?php esc_attr_e(the_title_attribute());?>">
+        <a href="<?php echo esc_url(the_permalink()); ?>" title="<?php the_title_attribute();?>">
             <?php the_post_thumbnail();?>
         </a>
     </div>
