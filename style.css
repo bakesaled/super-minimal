@@ -51,6 +51,10 @@ h3 {
   font-size: 1.2em;
 }
 
+h4 {
+  font-size: 1.1em;
+}
+
 ul {
   padding: 0;
 }
@@ -175,12 +179,24 @@ code {
   font-size: 0.8em
 }
 
+figure {
+  margin-block-start: .3em;
+  margin-block-end: .3em;
+}
+
 blockquote {
   margin: 0;
 }
 
 blockquote p {
-  padding: 20px;
+  padding-left: 20px;
+  font-style: italic;
+  font-size: .7em;
+  line-height: 25px;
+}
+
+blockquote cite {
+  padding-left: 20px;
   font-style: italic;
   font-size: .7em;
   line-height: 25px;
@@ -190,6 +206,11 @@ small {
   color: #666;
   font-size: .8em;
   line-height: 12px;
+}
+
+.has-small-font-size {
+  color: #666;
+  font-size: .8em;
 }
 
 #masthead {

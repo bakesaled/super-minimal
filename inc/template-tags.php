@@ -24,9 +24,12 @@ if (!function_exists('super_minimal_post_date')):
         $archive_day = get_the_time('d');
         $time_link = get_day_link($archive_year, $archive_month, $archive_day);
 
-        echo '<i class="fa fa-calendar-o" aria-hidden="true"></i>';
-        $date_wrap = sprintf('<span class="post-date">%2$s</span>', esc_url($time_link), esc_html(get_the_date()));
-        echo wp_kses_post($date_wrap);
+        $category = get_the_category();
+        if ($category[0]->cat_name !== 'Book Reviews') {
+            echo '<i class="fa fa-calendar-o" aria-hidden="true"></i>';
+            $date_wrap = sprintf('<span class="post-date">%2$s</span>', esc_url($time_link), esc_html(get_the_date()));
+            echo wp_kses_post($date_wrap);
+        }
     }
 endif;
 
