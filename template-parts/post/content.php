@@ -6,10 +6,6 @@
  */
 ?>
 
-<?php
-$super_minimal_blog_meta_date = super_minimal_get_option('super_minimal_blog_meta_date');
-$super_minimal_blog_meta_author = super_minimal_get_option('super_minimal_blog_meta_author');
-?>
 <article id="post-<?php the_ID();?>" <?php post_class();?>>
 <header>
   <?php the_title('<h2><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');?>
@@ -21,15 +17,10 @@ $super_minimal_blog_meta_author = super_minimal_get_option('super_minimal_blog_m
         </a>
     </div>
 <?php endif;?>
-<?php if ($super_minimal_blog_meta_date): ?>
-<small>
-    <?php super_minimal_post_date();?>
-</small>
-<?php endif;?>
-<?php if ($super_minimal_blog_meta_author): ?>
-<small>
-    <?php super_minimal_post_author();?>
-</small>
-<?php endif;?>
-<?php the_excerpt();?>
+<?php
+$category = get_the_category();
+if ($category[0]->cat_name !== 'Book Reviews') {
+    the_excerpt();
+}
+?>
 </article>

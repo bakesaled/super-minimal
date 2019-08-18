@@ -25,7 +25,7 @@ if (is_active_sidebar('footer-1') ||
 
 endif;?>
         <?php if ($super_minimal_copyright_author): ?>
-            <span>&copy; <?php date("Y");?> <a href="<?php echo esc_url(site_url()); ?>"><?php get_bloginfo('name');?></a></span>
+            <span>&copy; <?php echo date("Y"); ?> <a href="<?php echo esc_url(home_url()); ?>"><?php echo get_bloginfo('name'); ?></a></span>
         <?php endif;?>
     </footer>
     <?php if ($super_minimal_backto_top_status): ?>

@@ -169,7 +169,7 @@ function super_minimal_customize_register($wp_customize)
 // back to top control
     $wp_customize->add_control('super_minimal_backto_top_status',
         array(
-            'label' => esc_html__('Enable Back To Top Button', 'super-minimal'),
+            'label' => esc_html__('Show Back To Top Button', 'super-minimal'),
             'section' => 'super_minimal_backto_top_section',
             'type' => 'checkbox',
             'priority' => 100,
@@ -193,7 +193,7 @@ function super_minimal_customize_register($wp_customize)
     );
     $wp_customize->add_control('super_minimal_copyright_author',
         array('type' => 'checkbox',
-            'label' => esc_html__('Enable Copyright', 'super-minimal'),
+            'label' => esc_html__('Show Copyright', 'super-minimal'),
             'section' => 'super_minimal_copyright_section',
         )
     );

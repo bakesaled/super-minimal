@@ -26,9 +26,12 @@ $super_minimal_header_tagline = super_minimal_get_option('super_minimal_header_t
 <?php _e('Skip to content', 'super-minimal');?></a>
     <header id="masthead">
     <div>
-        <h1 class="blog-title"><a href="<?php echo esc_url(site_url()); ?>"><?php echo get_bloginfo('name'); ?></a></h1>
+    <?php if (display_header_text()): ?>
+        <h1 class="blog-title"><a href="<?php echo esc_url(home_url()); ?>"><?php echo get_bloginfo('name'); ?></a></h1>
+
         <?php if ($super_minimal_header_tagline): ?>
         <p class="site-description"><?php echo esc_html(get_bloginfo('description')); ?></p>
+        <?php endif;?>
         <?php endif;?>
         </div>
         <?php if (has_nav_menu('primary')): ?>

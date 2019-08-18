@@ -27,7 +27,7 @@ if (!function_exists('super_minimal_post_date')):
         $category = get_the_category();
         if ($category[0]->cat_name !== 'Book Reviews') {
             echo '<i class="fa fa-calendar-o" aria-hidden="true"></i>';
-            $date_wrap = sprintf('<span class="post-date">%2$s</span>', esc_url($time_link), esc_html(get_the_date()));
+            $date_wrap = sprintf('<a href="%1$s" class="post-date">%2$s</a>', esc_url($time_link), esc_html(get_the_date()));
             echo wp_kses_post($date_wrap);
         }
     }
