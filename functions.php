@@ -65,12 +65,6 @@ if (!function_exists('super_minimal_setup')):
             'default-image' => '',
         )));
 
-        /*
-         * This theme styles the visual editor to resemble the theme style,
-         * specifically font, colors, and column width.
-         */
-        add_editor_style(array('assets/css/editor-style.css', '/assets/css/editor-style.css'));
-
         $defaults = array(
             'default-image' => '',
             'width' => 1920,

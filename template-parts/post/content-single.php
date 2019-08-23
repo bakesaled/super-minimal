@@ -12,13 +12,6 @@ $super_minimal_single_blog_meta_author = super_minimal_get_option('super_minimal
 $super_minimal_single_blog_meta_tags = super_minimal_get_option('super_minimal_single_blog_meta_tags');
 ?>
 <article id="post-<?php the_ID();?>" <?php post_class();?>>
-<?php if (has_post_thumbnail()): ?>
-    <div class="post-thumbnail">
-        <a href="<?php echo esc_url(the_permalink()); ?>" title="<?php the_title_attribute();?>">
-            <?php the_post_thumbnail();?>
-        </a>
-    </div>
-<?php endif;?>
 <?php if ($super_minimal_single_blog_meta_date): ?>
 <small>
     <?php super_minimal_post_date();?>

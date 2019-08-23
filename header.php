@@ -22,6 +22,7 @@ $super_minimal_header_tagline = super_minimal_get_option('super_minimal_header_t
   </head>
 
   <body <?php body_class();?>>
+  <?php wp_body_open();?>
   <a class="skip-link screen-reader-text" href="#content">
 <?php _e('Skip to content', 'super-minimal');?></a>
     <header id="masthead">

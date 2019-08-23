@@ -28,7 +28,7 @@ function super_minimal_customize_register($wp_customize)
     //header tagline setting.
     $wp_customize->add_setting('super_minimal_header_tagline', array(
         'default' => $default['super_minimal_header_tagline'],
-        'sanitize_callback' => 'esc_url_raw'));
+        'sanitize_callback' => 'super_minimal_sanitize_checkbox'));
 
     //header tagline control
     $wp_customize->add_control('super_minimal_header_tagline',
@@ -188,7 +188,7 @@ function super_minimal_customize_register($wp_customize)
     $wp_customize->add_setting('super_minimal_copyright_author',
         array('capability' => 'edit_theme_options',
             'default' => $default['super_minimal_copyright_author'],
-            'sanitize_callback' => 'sanitize_text_field',
+            'sanitize_callback' => 'super_minimal_sanitize_checkbox',
         )
     );
     $wp_customize->add_control('super_minimal_copyright_author',
