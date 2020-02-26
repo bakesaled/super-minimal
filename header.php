@@ -53,14 +53,14 @@ $super_minimal_header_tagline = super_minimal_get_option('super_minimal_header_t
             </div>
 						<?php endif;?>
     </header>
-      <header>
+      <header class="entry-header">
                   <?php if (is_page() || is_single()) {?>
                     <?php if ($super_minimal_single_blog_meta_category): ?>
 			<h3>
 				<?php super_minimal_post_categories();?>
                   </h3>
 		<?php endif;?>
-											<h2><?php echo esc_html(get_the_title()); ?></h2>
+											<h2 class="entry-title"><?php echo esc_html(get_the_title()); ?></h2>
 										<?php } elseif (is_search()) {?>
 										<?php /* translators: %s: search term */
     $page_title = sprintf(esc_html__('Search Results for: %s', 'super-minimal'), get_search_query());
