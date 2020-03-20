@@ -19,6 +19,9 @@ $super_minimal_header_tagline = super_minimal_get_option('super_minimal_header_t
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11" />
     <?php wp_head();?>
+    <?php if (get_option('super_minimal_dark_mode') == 'true') {?>
+    <link rel="stylesheet" href="<?php echo esc_url(get_stylesheet_directory_uri()); ?>/dark.css" type="text/css">
+    <?php }?>
   </head>
 
   <body <?php body_class();?>>

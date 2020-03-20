@@ -196,3 +196,45 @@ function super_minimal_skip_link_focus_fix()
 	<?php
 }
 add_action('wp_print_footer_scripts', 'super_minimal_skip_link_focus_fix');
+
+// THEME COLOR
+// Options Page Functions
+function themeoptions_admin_menu()
+{
+    // Add theme options page link to the dashboard sidebar
+    add_theme_page("Theme Color", "Theme Color", 'edit_themes', basename(__FILE__), 'themeoptions_page');
+}
+
+function themeoptions_page()
+{
+    // The main function that will generate our options page
+    if (!empty($_POST['update_themeoptions']) && $_POST['update_themeoptions'] == 'true') {themeoptions_update();}
+    ?>
+<div class="wrap">
+    <div id="icon-themes" class="icon32"><br /></div>
+    <h2>Theme Color</h2>
+    <form method="POST" action="">
+    <?php $darkMode = get_option('super_minimal_dark_mode');?>
+        <input type="hidden" name="update_themeoptions" value="true" />
+        <h4>Dark Mode</h4>
+        <input type="checkbox" name="dark" value="dark" <?php if ($darkMode == 'true') {echo 'checked';}?> >
+        <p><input type="submit" name="search" value="Save" class="button" /></p>
+    </form>
+</div>
+<?php
+}
+function themeoptions_update()
+{
+// this is where validation would go
+    update_option('super_minimal_dark_mode', !empty($_POST['dark']) && $_POST['dark'] == 'dark' ? 'true' : '');
+    if (!empty($_POST['display_search']) && $_POST['display_search'] == 'on') {$display = 'checked';} else { $display = '';}
+    update_option('super_minimal_display_search', $display);
+}
+add_action('admin_menu', 'themeoptions_admin_menu');
+
+add_action('init', 'super_minimal_add_editor_styles');
+// Apply theme's stylesheet to the visual editor.
+function super_minimal_add_editor_styles()
+{
+    add_editor_style(get_stylesheet_uri());
+}

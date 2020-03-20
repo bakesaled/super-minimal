@@ -1,0 +1,64 @@
+body {
+  color: #fff !important;
+  background-color: #222 !important;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: #ddd !important;
+}
+
+article h2 {
+  border-bottom: 2px solid #ddd !important;
+}
+
+a {
+  color: #999 !important;
+}
+
+a:hover,
+a:focus,
+a:active {
+  color: #ddd !important;
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+  background: #222 !important;
+  border-color: #ddd !important;
+}
+
+small {
+  color: #999 !important;
+}
+
+.has-small-font-size {
+  color: #999 !important;
+}
+
+.main-navigation .current-menu-item a,
+.main-navigation .current_page_item a {
+  color: #ddd !important;
+}
+
+.zmm-dropdown-toggle {
+  color: #aaa !important;
+}
+
+.widget-title {
+  color: #ddd !important;
+  border-bottom: 2px solid #ddd !important;
+}
+
+.main-navigation ul ul {
+  background: #222 !important;
+}
+
+.mobile-menu {
+  background: #222 !important;
+  border-bottom: 1px solid #151515 !important;
+}

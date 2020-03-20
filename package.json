@@ -1,12 +1,12 @@
 {
   "name": "super-minimal",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "A light-weight, simple, minimal WordPress blog template",
   "scripts": {
     "zip": "bestzip super-minimal.zip super-minimal && npm run del-super-minimal",
     "del-dist": "del-cli dist",
     "del-super-minimal": "del-cli super-minimal",
-    "copy": "copyfiles -e \"*.zip\" -e \"*.json\" -e \"node_modules/**/*\" \"**/*\" super-minimal"
+    "copy": "copyfiles -e \"*.zip\" -e \"*.json\" -e \"*.gitignore\" -e \"node_modules/**/*\" \"**/*\" super-minimal"
   },
   "devDependencies": {
     "bestzip": "^2.1.4",
