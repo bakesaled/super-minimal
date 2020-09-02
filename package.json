@@ -9,7 +9,7 @@
     "copy": "copyfiles -e \"*.zip\" -e \"*.json\" -e \"*.gitignore\" -e \"node_modules/**/*\" \"**/*\" super-minimal"
   },
   "devDependencies": {
-    "bestzip": "^2.1.4",
+    "bestzip": "^2.1.7",
     "copyfiles": "^2.1.1",
     "del-cli": "^2.0.0"
   },
